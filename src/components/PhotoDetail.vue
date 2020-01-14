@@ -1,9 +1,11 @@
 <template>
   <div class="PhotoDetail">
     <img :src="current.url" class="image" />
-    <h2>{{ current.title }}</h2>
-    <h4>{{ this.date }}</h4>
-    <p class="explanation">{{ current.explanation }}</p>
+    <div>
+      <h2>{{ current.title }}</h2>
+      <h4>{{ this.date }}</h4>
+      <p class="explanation">{{ current.explanation }}</p>
+    </div>
   </div>
 </template>
 
@@ -34,16 +36,18 @@ export default {
 .PhotoDetail {
   align-items: center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  padding: 1% 2%;
   width: 100%;
 }
 
 .image {
-  width: 70%;
+  width: 75%;
+  padding-right: 2%;
 }
 
 .explanation {
-  width: 90%;
+  padding: 2% 1%;
+  width: 100%;
 }
 </style>
