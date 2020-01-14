@@ -7,8 +7,6 @@
 </template>
 
 <script>
-// import date from "date-and-time";
-// import formatTodaysDate from "../utils/helpers/helpers.js";
 export default {
   components: {},
   data: function() {

@@ -2,6 +2,7 @@
   <div id="app">
     <NavBar />
     <PhotoDetail v-bind:current="current" />
+    <MonthContainer v-bind:photos="monthsPhotos" />
   </div>
 </template>
 
@@ -9,17 +10,20 @@
 import 'es6-promise/auto';
 import NavBar from './components/NavBar.vue';
 import PhotoDetail from './components/PhotoDetail.vue';
-import { getTodaysPhoto } from './utils/apiCalls/apiCalls.js';
+import MonthContainer from './components/MonthContainer.vue';
+import { getTodaysPhoto, getPotdRange } from './utils/apiCalls/apiCalls.js';
 
 export default {
   name: 'app',
   components: {
     NavBar,
-    PhotoDetail
+    PhotoDetail,
+    MonthContainer
   },
   data() {
     return {
-      current: {}
+      current: {},
+      monthsPhotos: []
     };
   },
   methods: {
@@ -30,10 +34,19 @@ export default {
       } catch (error) {
         null;
       }
+    },
+    async setMonthlyPhotos() {
+      try {
+        let photos = await getPotdRange('2019-01-01', '2019-01-13');
+        this.monthsPhotos = photos;
+      } catch (error) {
+        null;
+      }
     }
   },
   mounted() {
     this.setTodayPhoto();
+    this.setMonthlyPhotos();
   }
 };
 </script>
