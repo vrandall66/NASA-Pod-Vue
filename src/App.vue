@@ -1,24 +1,31 @@
 <template>
   <div id="app">
     <NavBar />
-    <PhotoDetail v-bind:current="current" v-bind:date="displayDate" />
-    <MonthContainer v-bind:photos="monthsPhotos" />
+    <router-view>
+      
+    </router-view>
+    <!-- <PhotoDetail v-bind:current="current" v-bind:date="displayDate" /> -->
+    <!-- <MonthContainer v-bind:photos="monthsPhotos" /> -->
   </div>
 </template>
 
 <script>
 import 'es6-promise/auto';
 import NavBar from './components/NavBar.vue';
-import PhotoDetail from './components/PhotoDetail.vue';
-import MonthContainer from './components/MonthContainer.vue';
+import Home from './Views/Home.vue';
+import PhotosOfTheMonth from './Views/PhotosOfTheMonth.vue';
+// import PhotoDetail from './components/PhotoDetail.vue';
+// import MonthContainer from './components/MonthContainer.vue';
 import { getTodaysPhoto, getPotdRange } from './utils/apiCalls/apiCalls.js';
 
 export default {
   name: 'app',
   components: {
+    Home,
     NavBar,
-    PhotoDetail,
-    MonthContainer
+    PhotosOfTheMonth
+    // PhotoDetail,
+    // MonthContainer
   },
   data() {
     return {
