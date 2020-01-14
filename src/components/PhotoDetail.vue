@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <img :src="current.url" />
+  <div class="PhotoDetail">
+    <img :src="current.url" class="image" />
     <h2>{{ current.title }}</h2>
     <h4>{{ this.date }}</h4>
-    <p>{{ current.explanation }}</p>
+    <p class="explanation">{{ current.explanation }}</p>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ import 'es6-promise/auto';
 
 export default {
   name: 'PhotoDetail',
-  props: ['current'],
+  props: ['current', 'date'],
   data() {
     return {
       date: ''
@@ -30,4 +30,20 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.PhotoDetail {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.image {
+  width: 70%;
+}
+
+.explanation {
+  width: 90%;
+}
+</style>

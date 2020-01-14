@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Title</h1>
+    <h1>Daily Dose of Science</h1>
     <button>Today's Photo</button>
     <button>This Month's Photos</button>
   </div>
