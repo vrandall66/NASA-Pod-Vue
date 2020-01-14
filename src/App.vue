@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <NavBar />
-    <PhotoDetail v-bind:current="current" />
+    <PhotoDetail v-bind:current="current" v-bind:date="displayDate" />
     <MonthContainer v-bind:photos="monthsPhotos" />
   </div>
 </template>
@@ -23,7 +23,8 @@ export default {
   data() {
     return {
       current: {},
-      monthsPhotos: []
+      monthsPhotos: [],
+      displayDate: ''
     };
   },
   methods: {
@@ -37,11 +38,27 @@ export default {
     },
     async setMonthlyPhotos() {
       try {
-        let photos = await getPotdRange('2019-01-01', '2019-01-13');
+        let today = this.getTodaysDate();
+        let currentMonthAndYear = this.getMonthAndYear();
+        let photos = await getPotdRange(`${currentMonthAndYear}-01`, today);
         this.monthsPhotos = photos;
       } catch (error) {
         null;
       }
+    },
+    getTodaysDate() {
+      let today = new Date();
+      const dd = String(today.getDate()).padStart(2, '0');
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const yyyy = today.getFullYear();
+      this.displayDate = `${mm}/${dd}/${yyyy}`;
+      return `${yyyy}-${mm}-${dd}`;
+    },
+    getMonthAndYear() {
+      let today = new Date();
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const yyyy = today.getFullYear();
+      return `${yyyy}-${mm}`;
     }
   },
   mounted() {
@@ -52,6 +69,11 @@ export default {
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

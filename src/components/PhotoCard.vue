@@ -1,6 +1,7 @@
 <template>
   <div>
-    <img :src="photo.url" />
+    <img :src="photo.url" class="image" />
+    <h3>{{ photo.date }}</h3>
   </div>
 </template>
 
@@ -11,4 +12,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.image {
+  width: 100%;
+}
+</style>

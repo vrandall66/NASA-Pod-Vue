@@ -1,6 +1,10 @@
 <template>
-  <div>
-    <div v-for="photo in photos" v-bind:key="photo.date">
+  <div class="potato">
+    <div
+      v-for="photo in photos"
+      v-bind:key="photo.date"
+      class="div--image-container"
+    >
       <PhotoCard v-bind:photo="photo" />
     </div>
   </div>
@@ -17,4 +21,14 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.potato {
+  column-count: 4;
+  column-gap: 2%;
+  padding: 2%;
+}
+.div--image-container {
+  display: inline-block;
+  width: 100%;
+}
+</style>
