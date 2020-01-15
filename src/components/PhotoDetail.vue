@@ -11,10 +11,11 @@
 
 <script>
 import 'es6-promise/auto';
+import { formatTodaysDate } from '../utils/helpers/helpers.js';
 
 export default {
   name: 'PhotoDetail',
-  props: ['current', 'date'],
+  props: ['current'],
   data() {
     return {
       date: ''
@@ -22,8 +23,8 @@ export default {
   },
   methods: {
     formatDate() {
-      let formatted = current.date.toLocaleDateString();
-      this.date = formatted;
+      let todaysDate = formatTodaysDate();
+      this.date = todaysDate;
     }
   },
   mounted() {
