@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Photo of the Day</h2>
-    <PhotoDetail v-bind:current="current" />
+    <PhotoDetail v-bind:current="current" v-bind:loading="loading" />
   </div>
 </template>
 
@@ -17,7 +17,8 @@ export default {
   data() {
     return {
       current: {},
-      displayDate: ''
+      displayDate: '',
+      loading: true
     };
   },
   methods: {
@@ -25,9 +26,13 @@ export default {
       try {
         let photo = await getTodaysPhoto();
         this.current = photo;
+        this.setLoading();
       } catch (error) {
         null;
       }
+    },
+    setLoading() {
+      this.loading = !this.loading;
     }
   },
   mounted() {

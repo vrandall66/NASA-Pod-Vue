@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Photo from</h2>
+    <h2>Photo from {{ date }}</h2>
     <PreviousPhotoDetail v-bind:photo="photo" />
   </div>
 </template>
