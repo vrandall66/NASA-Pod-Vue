@@ -1,3 +1,22 @@
 export const formatTodaysDate = () => {
-  const date = require('date-and-time');
+  let today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const yyyy = today.getFullYear();
+  return `${mm}/${dd}/${yyyy}`;
+};
+
+export const getTodaysDate = () => {
+  let today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const yyyy = today.getFullYear();
+  return `${yyyy}-${mm}-${dd}`;
+};
+
+export const getMonthAndYear = () => {
+  let today = new Date();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const yyyy = today.getFullYear();
+  return `${yyyy}-${mm}`;
 };
