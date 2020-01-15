@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Photo of the Day</h1>
+    <h2>Photo of the Day</h2>
     <PhotoDetail v-bind:current="current" />
   </div>
 </template>

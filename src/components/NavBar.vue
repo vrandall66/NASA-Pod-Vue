@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <h1>Daily Dose of Science</h1>
-    <router-link to="/">Today's Photo</router-link>
-    <router-link to="/photos-of-the-month">This Month's Photos</router-link>
+  <div class="NavBar__div--container">
+    <h1 class="NavBar__h1--title">Daily Dose of Science</h1>
+    <div class="NavBar__div--link-container">
+      <router-link to="/">Today's Photo</router-link>
+      <router-link to="/photos-of-the-month">This Month's Photos</router-link>
+    </div>
   </div>
 </template>
 
@@ -19,4 +21,18 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.NavBar__div--container {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+
+.NavBar__h1--title {
+  padding: 1% 0% 1% 1%;
+}
+
+.NavBar__div--link-container {
+  
+}
+</style>

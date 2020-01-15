@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Photos of the Month</h1>
-    <MonthContainer v-bind:photos="monthsPhotos" />
+    <h2 class="div__h2--title">Photos from</h2>
+    <MonthContainer v-bind:photos="monthsPhotos" v-bind:loading="loading" />
   </div>
 </template>
 
@@ -17,7 +17,8 @@ export default {
   },
   data() {
     return {
-      monthsPhotos: []
+      monthsPhotos: [],
+      loading: true
     };
   },
   methods: {
@@ -27,9 +28,13 @@ export default {
         let currentMonthAndYear = getMonthAndYear();
         let photos = await getPotdRange(`${currentMonthAndYear}-01`, today);
         this.monthsPhotos = photos;
+        this.setLoading();
       } catch (error) {
         null;
       }
+    },
+    setLoading() {
+      this.loading = !this.loading;
     }
   },
   mounted() {
@@ -43,5 +48,9 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.div__h2--title {
+  padding-top: 2%;
 }
 </style>
