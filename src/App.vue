@@ -23,6 +23,7 @@ export default {
 
 <style>
 * {
+  background-color: #f1f2f3;
   box-sizing: border-box;
   margin: 0;
   padding: 0;

@@ -1,6 +1,12 @@
 <template>
-  <div class="potato">
+  <div class="MonthContainer__div--container">
+    <img
+      v-if="loading === true"
+      v-bind:src="require('../assets/Eclipse.gif')"
+      class="image"
+    />
     <div
+      v-if="photos"
       v-for="photo in photos"
       v-bind:key="photo.date"
       class="div--image-container"
@@ -17,12 +23,12 @@ export default {
   components: {
     PhotoCard
   },
-  props: ['photos']
+  props: ['photos', 'loading']
 };
 </script>
 
 <style scoped>
-.potato {
+.MonthContainer__div--container {
   column-count: 4;
   column-gap: 2%;
   padding: 2%;
