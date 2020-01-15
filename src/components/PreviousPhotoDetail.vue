@@ -21,12 +21,14 @@ export default {
   align-items: center;
   display: flex;
   justify-content: center;
+  margin-top: 1%;
   padding: 1% 2%;
   width: 100%;
 }
 
 .image {
-  width: 75%;
+  max-height: 50%;
+  max-width: 50%;
   padding-right: 2%;
 }
 

@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import 'es6-promise/auto';
 import NavBar from './components/NavBar.vue';
 import Home from './Views/Home.vue';
 import PhotosOfTheMonth from './Views/PhotosOfTheMonth.vue';
@@ -30,6 +29,7 @@ export default {
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  height: 100% vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

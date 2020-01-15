@@ -1,10 +1,17 @@
 <template>
-  <div class="PhotoDetail">
-    <img :src="current.url" class="image" />
-    <div>
-      <h2>{{ current.title }}</h2>
-      <h4>{{ this.date }}</h4>
-      <p class="explanation">{{ current.explanation }}</p>
+  <div>
+    <img
+      v-if="loading === true"
+      v-bind:src="require('../assets/Eclipse.gif')"
+      class="loading"
+    />
+    <div class="PhotoDetail" v-if="current">
+      <img :src="current.url" class="image" />
+      <div>
+        <h2>{{ current.title }}</h2>
+        <h4>{{ this.date }}</h4>
+        <p class="explanation">{{ current.explanation }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -14,7 +21,7 @@ import { formatTodaysDate } from '../utils/helpers/helpers.js';
 
 export default {
   name: 'PhotoDetail',
-  props: ['current'],
+  props: ['current', 'loading'],
   data() {
     return {
       date: ''
@@ -39,6 +46,11 @@ export default {
   justify-content: center;
   padding: 1% 2%;
   width: 100%;
+}
+
+.loading {
+  height: 25%;
+  width: 25%;
 }
 
 .image {
