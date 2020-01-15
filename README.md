@@ -34,13 +34,8 @@ npm run serve
 
 ## Screenshots
 
-<img width="1440" src="https://user-images.githubusercontent.com/48811985/69329710-8020ca80-0c49-11ea-80f3-d424a57a10e6.png">
-
-<img width="1440" src="https://user-images.githubusercontent.com/48811985/69330178-5fa54000-0c4a-11ea-94dd-5aedb548d609.png">
-
-## Kanban Board Workflow
-
-<img width="1440" src="https://user-images.githubusercontent.com/48811985/69099523-d841ac00-0a52-11ea-9d2c-b50844f9d734.png">
+![localhost_8081_photos-of-the-month (1)](https://user-images.githubusercontent.com/31895658/72461939-41147e80-378d-11ea-818c-ccd4bb9fe22f.png)
+![localhost_8081_photos-of-the-month](https://user-images.githubusercontent.com/31895658/72461941-41147e80-378d-11ea-8ad5-27627e789007.png)
 
 ## Personal Learning Goals
 
