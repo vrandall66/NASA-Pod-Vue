@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import 'es6-promise/auto';
 import { formatTodaysDate } from '../utils/helpers/helpers.js';
 
 export default {

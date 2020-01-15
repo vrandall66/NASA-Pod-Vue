@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="div__h2--title">Photos from</h2>
+    <h2 class="div__h2--title">Photos from this month</h2>
     <MonthContainer v-bind:photos="monthsPhotos" v-bind:loading="loading" />
   </div>
 </template>
