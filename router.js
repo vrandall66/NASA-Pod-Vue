@@ -17,11 +17,14 @@ export default new Router({
     },
     {
       path: '/photos-of-the-month',
+      name: 'month',
       component: PhotosOfTheMonth
     },
     {
       path: '/photo/:date',
-      component: PreviousPhoto
+      name: 'previous',
+      component: PreviousPhoto,
+      props: true
     }
   ]
 });

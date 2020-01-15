@@ -1,18 +1,19 @@
 <template>
   <div>
     <h2>Photo from</h2>
-    <PhotoDetail />
+    <PreviousPhotoDetail v-bind:photo="photo" />
   </div>
 </template>
 
 <script>
-import PhotoDetail from '../components/PhotoDetail.vue';
+import PreviousPhotoDetail from '../components/PreviousPhotoDetail.vue';
 
 export default {
   name: 'PreviousPhoto',
   components: {
-    PhotoDetail
-  }
+    PreviousPhotoDetail
+  },
+  props: ['photo', 'date']
 };
 </script>
 

@@ -11,7 +11,10 @@
       v-bind:key="photo.date"
       class="div--image-container"
     >
-      <PhotoCard v-bind:photo="photo" />
+      <PhotoCard
+        v-bind:photo="photo"
+        v-on:click.native="navigate(photo, photo.date)"
+      />
     </div>
   </div>
 </template>
@@ -23,7 +26,17 @@ export default {
   components: {
     PhotoCard
   },
-  props: ['photos', 'loading']
+  props: ['photos', 'loading'],
+  methods: {
+    navigate(photo, date) {
+      this.$router.push({
+        name: 'previous',
+        params: { photo, date },
+        props: photo,
+        date
+      });
+    }
+  }
 };
 </script>
 
